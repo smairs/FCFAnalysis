@@ -1,0 +1,46 @@
+BACKOFF='TRUE' 
+
+#GaussClumps parameters for CONFIG global FindClumps parameter
+
+#EXTRACOLS: If set to a positive integer, then extra method-specific columns are added to the output catalogue. If set to 1, then the catalogue will include columns with names GCFWHM<<i>> (where <<i>> is 1, 2, or 3), holding the FWHM of the fitted Gaussian in units of pixels (these FWHM values have NOT been reduced to excluded the effect of the beam width), and " GCANGLE" - the spatial orientation angle (in degrees, positive from ++ve GRID1 axis to ++ve GRID2 axis). If set greater than 1, then additional columns will be included holding the initial estimates for the peak and background values, the number of fitting iterations used and the final ch-squared value for the fit.
+
+GaussClumps.ExtraCols = 2
+
+#FWHMBEAM: The FWHM of the instrument beam, in pixels. This prevents noise spikes being fitted. In addition, if application paremeter DECONV is set TRUE, the clump widths written to the output catalogue are reduced (in quadrature) by this amount. [2.0]
+
+GaussClumps.FwhmBeam = 5
+
+#MAXBAD: The maximum fraction of bad pixels which may be included in a clump. Clumps will be excluded if they contain more bad pixels than this value [0.05]
+
+GaussClumps.MaxBad = 0
+
+#MAXNF: The maximum number of evaluations of the objective function allowed when fitting an individual clump. Here, the objective function evaluates the chi-squared between the current gaussian model and the data being fitted. [100]
+
+GaussClumps.MaxNF = 150
+
+#MAXSKIP: The maximum number of consecutive failures which are allowed when fitting Guassians. If more than " MaxSkip" consecutive clumps cannot be fitted, the iterative fitting process is terminated. [10] 
+
+GaussClumps.MaxSkip = 20
+
+#NPAD: Specifies a termination criterion for the GaussClumps algorithm. The algorithm will terminate when " Npad" consecutive clumps have been fitted all of which have peak values less than the threshold value specified by the " Thresh" parameter, or when one of the other termination criteria is met. [10]
+
+GaussClumps.NPad = 10
+
+#THRESH: Gives the minimum peak amplitude of clumps to be fitted by the GaussClumps algorithm (see also GaussClumps.NPad). The supplied value is multipled by the RMS noise level before being used. [2.0]
+
+GaussClumps.Thresh = 75.0
+
+#Unaltered parameters
+#GaussClumps.Wmin = 
+#GaussClumps.Wwidth = 
+#GaussClumps.FwhmStart = 
+#GaussClumps.MaxClumps = 
+#GaussClumps.VeloRes = 
+#GaussClumps.VeloStart = 
+#GaussClumps.RMS =
+#GaussClumps.S0 = 
+#GaussClumps.Sa = 
+#GaussClumps.Sb = 
+#GaussClumps.Sc = 
+#GaussClumps.FwhmStart = 
+#GaussClumps.ModelLim = 
