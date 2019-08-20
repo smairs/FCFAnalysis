@@ -1,51 +1,48 @@
-# IDENTIFY_OUTLIERS.PY                                                                         
-#                                                                                              
-# This program takes the results of TauRelPipeline                                             
-# (the dictionary of all the peak flux, total flux, transmission,                              
-#  weather, metadata etc for all calibrator observations for all tau relations                 
-#  attempted in TauRelPipeline) and applies constraints to the data                            
-# (time of night, size of the object, opacity, airmass)                                        
-# to determine robust FCFs. Multiple dictionaries produced by TauRelPipeline                   
-# can be used and each one can assume a different opacity relation.                            
-#                                                                                              
-#                                                                                              
-# The program also displays histograms of the weather/source properties/metadata               
-# and colours those which lie outside the standard deviation of an FCF vs MJD                  
-# plot for both FCF_beam and FCF_total - this way, I can track which properties                
-# outliers all seem to have in common and apply appropriate constraints.                       
-#                                                                                              
-#                                                                                              
-
-# Below are several instances where I have compiled both 850 micron and 450 micron data for 
-# the 2011-2012 regime and the 2016-2017 regime toanalyse what different opacity relations  
-# do to the FCFs. Each run of this program is just a functional definition for my own ease  
-# or organisation. Just uncomment the definition of a function which has the data you       
-# would like to see and run it in python3 as per ususal:                                    
-
-# %python3
-# >>>from identify_outliers import *
-# >>>find_outliers()                
-
-# The BINFILES refer to the pickled files output by TauRelPipeline.py
-# The BESTKEYS refer to different opacity relations - the program will print out what opacity
-# relation is being assumed for each source.                                                 
-#                                                                                            
-# The rest of the keywords are constraints that I have modified to eliminate scatter. For instance,
-# every observation with an airmass higher than 1.9 was an outlier in the data. I limit the        
-# observation times to 21:00 to 05:00 do avoid dish deformation in the early evening and late morning, etc.
-#                                                                                                          
-#                                                                                                          
-#                                                                                                          
+import pickle
+import numpy as np
+import matplotlib.pyplot as plt
+from astropy.time import Time
 
 
 def find_outliers(BINFILES=['TauRelPipeline_FullResults_CRL2688_26p0to26p5_0p012to0p012_20162017.bin','TauRelPipeline_FullResults_CRL618_26p0to26p5_0p012to0p012_20162017.bin','TauRelPipeline_FullResults_URANUS_26p0to26p5_0p012to0p012_20162017.bin'],BESTKEYS=['Run_0','Run_0','Run_0'],OBSSTLIM=7,OBSENLIM=16,LOWERTAULIM=0.0,UPPERTAULIM=0.32,wavelength='450',FWHMLIM=11.0,AMLIM=5.0,PIX_SIZE=1.0,present_epoch='20180501',present_epoch_only=0,INCLUDESOURCES=['CRL2688','CRL618','URANUS','MARS','NEPTUNE']):
 
-#def find_outliers(BINFILES=['TauRelPipeline_FullResults_CRL2688_5p4to5p7_0p013to0p013_20162017.bin','TauRelPipeline_FullResults_CRL618_5p4to5p7_0p013to0p013_20162017.bin','TauRelPipeline_FullResults_URANUS_5p4to5p7_0p013to0p013_20162017.bin'],BESTKEYS=['Run_1','Run_1','Run_1'],OBSSTLIM=6,OBSENLIM=16,LOWERTAULIM=0.0,UPPERTAULIM=0.12,wavelength='850',FWHMLIM=15.0,AMLIM=5.0,PIX_SIZE=1.0):
-
-    import pickle                                                     
-    import numpy as np                                                                                                         
-    import matplotlib.pyplot as plt                                                                                            
-    from astropy.time import Time
+    '''
+    IDENTIFY_OUTLIERS.PY                                                                         
+                                                                                                 
+    This program takes the results of TauRelPipeline                                             
+    (the dictionary of all the peak flux, total flux, transmission,                              
+     weather, metadata etc for all calibrator observations for all tau relations                 
+     attempted in TauRelPipeline) and applies constraints to the data                            
+    (time of night, size of the object, opacity, airmass)                                        
+    to determine robust FCFs. Multiple dictionaries produced by TauRelPipeline                   
+    can be used and each one can assume a different opacity relation.                            
+                                                                                                 
+                                                                                                 
+    The program also displays histograms of the weather/source properties/metadata               
+    and colours those which lie outside the standard deviation of an FCF vs MJD                  
+    plot for both FCF_beam and FCF_total - this way, I can track which properties                
+    outliers all seem to have in common and apply appropriate constraints.                       
+                                                                                                 
+                                                                                                 
+   
+    Below are several instances where I have compiled both 850 micron and 450 micron data for 
+    the 2011-2012 regime and the 2016-2017 regime toanalyse what different opacity relations  
+    do to the FCFs. Each run of this program is just a functional definition for my own ease  
+    or organisation. Just uncomment the definition of a function which has the data you       
+    would like to see and run it in python3 as per ususal:                                    
+   
+    %python3
+    >>>from identify_outliers import *
+    >>>find_outliers()                
+   
+    The BINFILES refer to the pickled files output by TauRelPipeline.py
+    The BESTKEYS refer to different opacity relations - the program will print out what opacity
+    relation is being assumed for each source.                                                 
+                                                                                               
+    The rest of the keywords are constraints that I have modified to eliminate scatter. For instance,
+    every observation with an airmass higher than 1.9 was an outlier in the data. I limit the        
+    observation times to 21:00 to 05:00 do avoid dish deformation in the early evening and late morning, etc.
+    '''
 
     FCFarcsecupperlim = 8.0
     FCFbeamupperlim   = 900
