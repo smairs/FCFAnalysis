@@ -1,0 +1,7 @@
+/net/kamaka/export/data/jsa_proc/output/000/000232/000232267/s20180712_00070_450_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000232/000232267/s20180712_00072_450_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000232/000232267/s20180712_00090_450_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000232/000232353/s20180713_00077_450_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000232/000232353/s20180713_00078_450_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000232/000232353/s20180713_00080_450_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000232/000232353/s20180713_00081_450_reduced.sdf
