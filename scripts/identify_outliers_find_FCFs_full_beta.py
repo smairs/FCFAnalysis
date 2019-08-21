@@ -1,9 +1,3 @@
-import pickle
-import numpy as np
-import matplotlib.pyplot as plt
-from astropy.time import Time
-
-
 def find_outliers(BINFILES=['TauRelPipeline_FullResults_CRL2688_26p0to26p5_0p012to0p012_20162017.bin','TauRelPipeline_FullResults_CRL618_26p0to26p5_0p012to0p012_20162017.bin','TauRelPipeline_FullResults_URANUS_26p0to26p5_0p012to0p012_20162017.bin'],BESTKEYS=['Run_0','Run_0','Run_0'],OBSSTLIM=7,OBSENLIM=16,LOWERTAULIM=0.0,UPPERTAULIM=0.32,wavelength='450',FWHMLIM=11.0,AMLIM=5.0,PIX_SIZE=1.0,present_epoch='20180501',present_epoch_only=0,INCLUDESOURCES=['CRL2688','CRL618','URANUS','MARS','NEPTUNE']):
 
     '''
@@ -43,6 +37,12 @@ def find_outliers(BINFILES=['TauRelPipeline_FullResults_CRL2688_26p0to26p5_0p012
     every observation with an airmass higher than 1.9 was an outlier in the data. I limit the        
     observation times to 21:00 to 05:00 do avoid dish deformation in the early evening and late morning, etc.
     '''
+
+    import pickle
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from astropy.time import Time
+    import os
 
     FCFarcsecupperlim = 8.0
     FCFbeamupperlim   = 900
@@ -186,7 +186,6 @@ def find_outliers(BINFILES=['TauRelPipeline_FullResults_CRL2688_26p0to26p5_0p012
         MJD_OBS     = np.array(results[BESTKEY]['MJD-OBS'])[np.where(np.isnan(np.array(peakfluxes1))*-1+1>0)]
         MJD_END     = np.array(results[BESTKEY]['MJD-END'])[np.where(np.isnan(np.array(peakfluxes1))*-1+1>0)]
         ELAPTIME    = np.array(results[BESTKEY]['ELAPTIME'])[np.where(np.isnan(np.array(peakfluxes1))*-1+1>0)]
-        trans_unphys_per = results[BESTKEY]['trans_unphys_per']
 
 
         OBSST = []
@@ -1651,5 +1650,7 @@ def find_outliers(BINFILES=['TauRelPipeline_FullResults_CRL2688_26p0to26p5_0p012
             else:
                 FCF_dictionary[eachsource]['FCF_arcsec_err'].append(np.sqrt(sum((source_information_dict_by_epoch[eachsource]['FCF_arcsecs_'+str(eachepoch)][np.where(np.logical_and(source_information_dict_by_epoch[eachsource]['FCF_arcsecs_'+str(eachepoch)]>FCF_arcsec_low_cutoff,source_information_dict_by_epoch[eachsource]['FCF_arcsecs_'+str(eachepoch)]<FCF_arcsec_high_cutoff))]-np.average(source_information_dict_by_epoch[eachsource]['FCF_arcsecs_'+str(eachepoch)][np.where(np.logical_and(source_information_dict_by_epoch[eachsource]['FCF_arcsecs_'+str(eachepoch)]>FCF_arcsec_low_cutoff,source_information_dict_by_epoch[eachsource]['FCF_arcsecs_'+str(eachepoch)]<FCF_arcsec_high_cutoff))]))**2.0)/(len(source_information_dict_by_epoch[eachsource]['FCF_arcsecs_'+str(eachepoch)][np.where(np.logical_and(source_information_dict_by_epoch[eachsource]['FCF_arcsecs_'+str(eachepoch)]>FCF_arcsec_low_cutoff,source_information_dict_by_epoch[eachsource]['FCF_arcsecs_'+str(eachepoch)]<FCF_arcsec_high_cutoff))])-1)))
 
+    if not os.path.exists('catalogues'): os.system('mkdir catalogues')
+    os.system('mv master*txt catalogues/')
     return(FCF_dictionary)
 

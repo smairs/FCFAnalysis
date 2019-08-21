@@ -1,0 +1,4 @@
+/net/kamaka/export/data/jsa_proc/output/000/000231/000231745/s20180629_00041_850_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000231/000231745/s20180629_00044_850_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000231/000231745/s20180629_00042_850_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000231/000231745/s20180629_00043_850_reduced.sdf
