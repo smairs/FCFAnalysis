@@ -1,7 +1,7 @@
 Run SCUBA* notebook to produce results files
 Run make_cats to get the master catalogues
 
-Then we need to sun best_plotting* to get the InfoFiles
+Then we need to run best_plotting* to get the InfoFiles
 
 Then run "run_summarise*" to plot the rainbow plots by different source sets
 like leaving out CRL 618 or not
