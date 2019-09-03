@@ -1,0 +1,26 @@
+Run SCUBA* notebook to produce results files
+Run make_cats to get the master catalogues
+
+Then we need to run best_plotting* to get the InfoFiles
+
+Then run "run_summarise*" to plot the rainbow plots by different source sets
+like leaving out CRL 618 or not
+
+Currently, run_summarise calls plot_by_tauxam.py and that is what
+produces these plots by source set. This code (plot_by_tauxam)
+prints out information that I have been manually copying and pasting
+to plot_FCFs_by_time_of_night* to create the rainbow plots that show
+before and after epochs for all, SS, EO. 
+
+Things I need to do imminently: Move best_plotting* to here and
+fix it up so it cleanly produces those InfoFiles - choose what plots
+it should make every time and fix the x axis limits on it to be inputs
+
+Then, fix plot_FCFs_by_time_of_night so it takes inputs and fix
+plot_by_tauxam to produce those correct inputs - this means we need
+to run both constrained and not constrained togther.
+
+Then fix run_summarise to print out proper latex tables
+
+Then make the Jupyter notebook run this whole analysis with nothing
+else in the way.
