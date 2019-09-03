@@ -471,116 +471,117 @@ def TauRelPipeline(source,OR_coeffs,wave,mindate,maxdate,aperture_diam=0.0166666
                 intercepts.append(np.nan)
 
             if previous_file_exists == True:
-                 previous_results_dict[run_num_str]['fnames'].extend(list(fnames))
-                 previous_results_dict[run_num_str]['peak_fluxes'].extend(list(peak_fluxes))
-                 previous_results_dict[run_num_str]['BFPeak'].extend(list(BFPeak_fluxes))
-                 previous_results_dict[run_num_str]['MapPeak'].extend(list(map_peak_fluxes))
-                 previous_results_dict[run_num_str]['total_fluxes'].extend(list(total_fluxes))
-                 previous_results_dict[run_num_str]['areas'].extend(list(areas))
-                 previous_results_dict[run_num_str]['FWHM1s'].extend(list(FWHM1s))
-                 previous_results_dict[run_num_str]['FWHM2s'].extend(list(FWHM2s))
-                 previous_results_dict[run_num_str]['transmissions'].extend(list(transmissions))
-                 previous_results_dict[run_num_str]['transmissions'].extend(list(delta_trans_list))
-                 previous_results_dict[run_num_str]['WVMTAUST'].extend(list(WVMST))
-                 previous_results_dict[run_num_str]['WVMTAUEN'].extend(list(WVMEN))
-                 previous_results_dict[run_num_str]['WVMTAUST_TIME'].extend(list(WVMST_TIME))
-                 previous_results_dict[run_num_str]['WVMTAUEN_TIME'].extend(list(WVMEN_TIME))
-                 previous_results_dict[run_num_str]['AMSTART'].extend(list(AMSTART))
-                 previous_results_dict[run_num_str]['AMEND'].extend(list(AMEND))
-                 previous_results_dict[run_num_str]['OBSSTART'].extend(list(obsstart))
-                 previous_results_dict[run_num_str]['OBSEND'].extend(list(obsend))
-                 previous_results_dict[run_num_str]['ATSTART'].extend(list(ATSTART))
-                 previous_results_dict[run_num_str]['ATEND'].extend(list(ATEND))
-                 previous_results_dict[run_num_str]['OBSNUM'].extend(list(OBSNUM))
-                 previous_results_dict[run_num_str]['UTDATE'].extend(list(UTDATE))
-                 previous_results_dict[run_num_str]['AZSTART'].extend(list(AZSTART))
-                 previous_results_dict[run_num_str]['AZEND'].extend(list(AZEND))
-                 previous_results_dict[run_num_str]['ELSTART'].extend(list(ELSTART))
-                 previous_results_dict[run_num_str]['ELEND'].extend(list(ELEND))
-                 previous_results_dict[run_num_str]['HUMSTART'].extend(list(HUMSTART))
-                 previous_results_dict[run_num_str]['HUMEND'].extend(list(HUMEND))
-                 previous_results_dict[run_num_str]['BPSTART'].extend(list(BPSTART))
-                 previous_results_dict[run_num_str]['BPEND'].extend(list(BPEND))
-                 previous_results_dict[run_num_str]['WNDSPDST'].extend(list(WNDSPDST))
-                 previous_results_dict[run_num_str]['WNDSPDEN'].extend(list(WNDSPDEN))
-                 previous_results_dict[run_num_str]['WNDDIRST'].extend(list(WNDDIRST))
-                 previous_results_dict[run_num_str]['WNDDIREN'].extend(list(WNDDIREN))
-                 previous_results_dict[run_num_str]['TAU225ST'].extend(list(TAU225ST))
-                 previous_results_dict[run_num_str]['TAU225EN'].extend(list(TAU225EN))
-                 previous_results_dict[run_num_str]['TAUDATST'].extend(list(TAUDATST))
-                 previous_results_dict[run_num_str]['TAUDATEN'].extend(list(TAUDATEN))
-                 previous_results_dict[run_num_str]['SEEINGST'].extend(list(SEEINGST))
-                 previous_results_dict[run_num_str]['SEEINGEN'].extend(list(SEEINGEN))
-                 previous_results_dict[run_num_str]['SEEDATST'].extend(list(SEEDATST))
-                 previous_results_dict[run_num_str]['SEEDATEN'].extend(list(SEEDATEN))
-                 previous_results_dict[run_num_str]['FRLEGTST'].extend(list(FRLEGTST))
-                 previous_results_dict[run_num_str]['FRLEGTEN'].extend(list(FRLEGTEN))
-                 previous_results_dict[run_num_str]['BKLEGTST'].extend(list(BKLEGTST))
-                 previous_results_dict[run_num_str]['BKLEGTEN'].extend(list(BKLEGTEN))
-                 previous_results_dict[run_num_str]['MJD-OBS'].extend(list(MJD_OBS))
-                 previous_results_dict[run_num_str]['MJD-END'].extend(list(MJD_END))
-                 previous_results_dict[run_num_str]['ELAPTIME'].extend(list(ELAPTIME))
+                previous_results_dict[run_num_str]['fnames'].extend(list(fnames))
+                previous_results_dict[run_num_str]['peak_fluxes'].extend(list(peak_fluxes))
+                previous_results_dict[run_num_str]['BFPeak'].extend(list(BFPeak_fluxes))
+                previous_results_dict[run_num_str]['MapPeak'].extend(list(map_peak_fluxes))
+                previous_results_dict[run_num_str]['total_fluxes'].extend(list(total_fluxes))
+                previous_results_dict[run_num_str]['areas'].extend(list(areas))
+                previous_results_dict[run_num_str]['FWHM1s'].extend(list(FWHM1s))
+                previous_results_dict[run_num_str]['FWHM2s'].extend(list(FWHM2s))
+                previous_results_dict[run_num_str]['transmissions'].extend(list(transmissions))
+                previous_results_dict[run_num_str]['transmissions'].extend(list(delta_trans_list))
+                previous_results_dict[run_num_str]['WVMTAUST'].extend(list(WVMST))
+                previous_results_dict[run_num_str]['WVMTAUEN'].extend(list(WVMEN))
+                previous_results_dict[run_num_str]['WVMTAUST_TIME'].extend(list(WVMST_TIME))
+                previous_results_dict[run_num_str]['WVMTAUEN_TIME'].extend(list(WVMEN_TIME))
+                previous_results_dict[run_num_str]['AMSTART'].extend(list(AMSTART))
+                previous_results_dict[run_num_str]['AMEND'].extend(list(AMEND))
+                previous_results_dict[run_num_str]['OBSSTART'].extend(list(obsstart))
+                previous_results_dict[run_num_str]['OBSEND'].extend(list(obsend))
+                previous_results_dict[run_num_str]['ATSTART'].extend(list(ATSTART))
+                previous_results_dict[run_num_str]['ATEND'].extend(list(ATEND))
+                previous_results_dict[run_num_str]['OBSNUM'].extend(list(OBSNUM))
+                previous_results_dict[run_num_str]['UTDATE'].extend(list(UTDATE))
+                previous_results_dict[run_num_str]['AZSTART'].extend(list(AZSTART))
+                previous_results_dict[run_num_str]['AZEND'].extend(list(AZEND))
+                previous_results_dict[run_num_str]['ELSTART'].extend(list(ELSTART))
+                previous_results_dict[run_num_str]['ELEND'].extend(list(ELEND))
+                previous_results_dict[run_num_str]['HUMSTART'].extend(list(HUMSTART))
+                previous_results_dict[run_num_str]['HUMEND'].extend(list(HUMEND))
+                previous_results_dict[run_num_str]['BPSTART'].extend(list(BPSTART))
+                previous_results_dict[run_num_str]['BPEND'].extend(list(BPEND))
+                previous_results_dict[run_num_str]['WNDSPDST'].extend(list(WNDSPDST))
+                previous_results_dict[run_num_str]['WNDSPDEN'].extend(list(WNDSPDEN))
+                previous_results_dict[run_num_str]['WNDDIRST'].extend(list(WNDDIRST))
+                previous_results_dict[run_num_str]['WNDDIREN'].extend(list(WNDDIREN))
+                previous_results_dict[run_num_str]['TAU225ST'].extend(list(TAU225ST))
+                previous_results_dict[run_num_str]['TAU225EN'].extend(list(TAU225EN))
+                previous_results_dict[run_num_str]['TAUDATST'].extend(list(TAUDATST))
+                previous_results_dict[run_num_str]['TAUDATEN'].extend(list(TAUDATEN))
+                previous_results_dict[run_num_str]['SEEINGST'].extend(list(SEEINGST))
+                previous_results_dict[run_num_str]['SEEINGEN'].extend(list(SEEINGEN))
+                previous_results_dict[run_num_str]['SEEDATST'].extend(list(SEEDATST))
+                previous_results_dict[run_num_str]['SEEDATEN'].extend(list(SEEDATEN))
+                previous_results_dict[run_num_str]['FRLEGTST'].extend(list(FRLEGTST))
+                previous_results_dict[run_num_str]['FRLEGTEN'].extend(list(FRLEGTEN))
+                previous_results_dict[run_num_str]['BKLEGTST'].extend(list(BKLEGTST))
+                previous_results_dict[run_num_str]['BKLEGTEN'].extend(list(BKLEGTEN))
+                previous_results_dict[run_num_str]['MJD-OBS'].extend(list(MJD_OBS))
+                previous_results_dict[run_num_str]['MJD-END'].extend(list(MJD_END))
+                previous_results_dict[run_num_str]['ELAPTIME'].extend(list(ELAPTIME))
 
-            results_dict[run_num_str]={}
-            results_dict[run_num_str]['fnames']                = fnames
-            results_dict[run_num_str]['coeff1']                = coeff1_range[eachpair]
-            results_dict[run_num_str]['coeff2']                = coeff2_range[eachpair]
-            results_dict[run_num_str]['source']                = source
-            results_dict[run_num_str]['peak_fluxes']           = peak_fluxes
-            results_dict[run_num_str]['BFPeak']                = BFPeak_fluxes
-            results_dict[run_num_str]['MapPeak']               = map_peak_fluxes
-            results_dict[run_num_str]['total_fluxes']          = total_fluxes
-            results_dict[run_num_str]['areas']                 = areas
-            results_dict[run_num_str]['FWHM1s']                = FWHM1s
-            results_dict[run_num_str]['FWHM2s']                = FWHM2s
-            results_dict[run_num_str]['averageFWHM1']          = np.average(FWHM1s)
-            results_dict[run_num_str]['averageFWHM2']          = np.average(FWHM2s)
-            results_dict[run_num_str]['transmissions']         = transmissions
-            results_dict[run_num_str]['delta_trans']           = delta_trans_list
-            results_dict[run_num_str]['WVMTAUST']              = WVMST
-            results_dict[run_num_str]['WVMTAUEN']              = WVMEN
-            results_dict[run_num_str]['WVMTAUST_TIME']         = WVMST_TIME
-            results_dict[run_num_str]['WVMTAUEN_TIME']         = WVMEN_TIME
-            results_dict[run_num_str]['AMSTART']               = AMSTART
-            results_dict[run_num_str]['AMEND']                 = AMEND
-            results_dict[run_num_str]['OBSSTART']              = obsstart
-            results_dict[run_num_str]['OBSEND']                = obsend
-            results_dict[run_num_str]['ATSTART']               = ATSTART
-            results_dict[run_num_str]['ATEND']                 = ATEND
-            results_dict[run_num_str]['OBSNUM']                = OBSNUM
-            results_dict[run_num_str]['UTDATE']                = UTDATE
-            results_dict[run_num_str]['AZSTART']               = AZSTART
-            results_dict[run_num_str]['AZEND']                 = AZEND
-            results_dict[run_num_str]['ELSTART']               = ELSTART
-            results_dict[run_num_str]['ELEND']                 = ELEND
-            results_dict[run_num_str]['HUMSTART']              = HUMSTART
-            results_dict[run_num_str]['HUMEND']                = HUMEND
-            results_dict[run_num_str]['BPSTART']               = BPSTART
-            results_dict[run_num_str]['BPEND']                 = BPEND
-            results_dict[run_num_str]['WNDSPDST']              = WNDSPDST
-            results_dict[run_num_str]['WNDSPDEN']              = WNDSPDEN
-            results_dict[run_num_str]['WNDDIRST']              = WNDDIRST
-            results_dict[run_num_str]['WNDDIREN']              = WNDDIREN
-            results_dict[run_num_str]['TAU225ST']              = TAU225ST
-            results_dict[run_num_str]['TAU225EN']              = TAU225EN
-            results_dict[run_num_str]['TAUDATST']              = TAUDATST
-            results_dict[run_num_str]['TAUDATEN']              = TAUDATEN
-            results_dict[run_num_str]['SEEINGST']              = SEEINGST
-            results_dict[run_num_str]['SEEINGEN']              = SEEINGEN
-            results_dict[run_num_str]['SEEDATST']              = SEEDATST
-            results_dict[run_num_str]['SEEDATEN']              = SEEDATEN
-            results_dict[run_num_str]['FRLEGTST']              = FRLEGTST
-            results_dict[run_num_str]['FRLEGTEN']              = FRLEGTEN
-            results_dict[run_num_str]['BKLEGTST']              = BKLEGTST
-            results_dict[run_num_str]['BKLEGTEN']              = BKLEGTEN
-            results_dict[run_num_str]['MJD-OBS']               = MJD_OBS
-            results_dict[run_num_str]['MJD-END']               = MJD_END
-            results_dict[run_num_str]['ELAPTIME']              = ELAPTIME
+            else:
+                results_dict[run_num_str]={}
+                results_dict[run_num_str]['fnames']                = fnames
+                results_dict[run_num_str]['coeff1']                = coeff1_range[eachpair]
+                results_dict[run_num_str]['coeff2']                = coeff2_range[eachpair]
+                results_dict[run_num_str]['source']                = source
+                results_dict[run_num_str]['peak_fluxes']           = peak_fluxes
+                results_dict[run_num_str]['BFPeak']                = BFPeak_fluxes
+                results_dict[run_num_str]['MapPeak']               = map_peak_fluxes
+                results_dict[run_num_str]['total_fluxes']          = total_fluxes
+                results_dict[run_num_str]['areas']                 = areas
+                results_dict[run_num_str]['FWHM1s']                = FWHM1s
+                results_dict[run_num_str]['FWHM2s']                = FWHM2s
+                results_dict[run_num_str]['averageFWHM1']          = np.average(FWHM1s)
+                results_dict[run_num_str]['averageFWHM2']          = np.average(FWHM2s)
+                results_dict[run_num_str]['transmissions']         = transmissions
+                results_dict[run_num_str]['delta_trans']           = delta_trans_list
+                results_dict[run_num_str]['WVMTAUST']              = WVMST
+                results_dict[run_num_str]['WVMTAUEN']              = WVMEN
+                results_dict[run_num_str]['WVMTAUST_TIME']         = WVMST_TIME
+                results_dict[run_num_str]['WVMTAUEN_TIME']         = WVMEN_TIME
+                results_dict[run_num_str]['AMSTART']               = AMSTART
+                results_dict[run_num_str]['AMEND']                 = AMEND
+                results_dict[run_num_str]['OBSSTART']              = obsstart
+                results_dict[run_num_str]['OBSEND']                = obsend
+                results_dict[run_num_str]['ATSTART']               = ATSTART
+                results_dict[run_num_str]['ATEND']                 = ATEND
+                results_dict[run_num_str]['OBSNUM']                = OBSNUM
+                results_dict[run_num_str]['UTDATE']                = UTDATE
+                results_dict[run_num_str]['AZSTART']               = AZSTART
+                results_dict[run_num_str]['AZEND']                 = AZEND
+                results_dict[run_num_str]['ELSTART']               = ELSTART
+                results_dict[run_num_str]['ELEND']                 = ELEND
+                results_dict[run_num_str]['HUMSTART']              = HUMSTART
+                results_dict[run_num_str]['HUMEND']                = HUMEND
+                results_dict[run_num_str]['BPSTART']               = BPSTART
+                results_dict[run_num_str]['BPEND']                 = BPEND
+                results_dict[run_num_str]['WNDSPDST']              = WNDSPDST
+                results_dict[run_num_str]['WNDSPDEN']              = WNDSPDEN
+                results_dict[run_num_str]['WNDDIRST']              = WNDDIRST
+                results_dict[run_num_str]['WNDDIREN']              = WNDDIREN
+                results_dict[run_num_str]['TAU225ST']              = TAU225ST
+                results_dict[run_num_str]['TAU225EN']              = TAU225EN
+                results_dict[run_num_str]['TAUDATST']              = TAUDATST
+                results_dict[run_num_str]['TAUDATEN']              = TAUDATEN
+                results_dict[run_num_str]['SEEINGST']              = SEEINGST
+                results_dict[run_num_str]['SEEINGEN']              = SEEINGEN
+                results_dict[run_num_str]['SEEDATST']              = SEEDATST
+                results_dict[run_num_str]['SEEDATEN']              = SEEDATEN
+                results_dict[run_num_str]['FRLEGTST']              = FRLEGTST
+                results_dict[run_num_str]['FRLEGTEN']              = FRLEGTEN
+                results_dict[run_num_str]['BKLEGTST']              = BKLEGTST
+                results_dict[run_num_str]['BKLEGTEN']              = BKLEGTEN
+                results_dict[run_num_str]['MJD-OBS']               = MJD_OBS
+                results_dict[run_num_str]['MJD-END']               = MJD_END
+                results_dict[run_num_str]['ELAPTIME']              = ELAPTIME
 
-            #if 'no' in transphysical:
-            #    results_dict[run_num_str]['trans_unphys_per'] = float(100*len(np.where(np.array(transphysical)=='no')[0]))/float(len(np.array(transphysical)))
-            #else:
-            #    results_dict[run_num_str]['trans_unphys_per'] = 0.0 
+                #if 'no' in transphysical:
+                #    results_dict[run_num_str]['trans_unphys_per'] = float(100*len(np.where(np.array(transphysical)=='no')[0]))/float(len(np.array(transphysical)))
+                #else:
+                #    results_dict[run_num_str]['trans_unphys_per'] = 0.0 
     
     
     #plt.clf()
@@ -620,7 +621,10 @@ def TauRelPipeline(source,OR_coeffs,wave,mindate,maxdate,aperture_diam=0.0166666
     else:
         MinForFilename   = str(time.localtime().tm_min)
 
-    pickle.dump(results_dict,open('TauRelPipeline_FullResults_'+wave+'_'+source+'_'+mindate+'_'+YearForFilename+MonthForFilename+DayForFilename+HourForFilename+MinForFilename+".bin",'wb'))
+    if previous_file_exists == True:
+        pickle.dump(previous_results_dict,open('TauRelPipeline_FullResults_'+wave+'_'+source+'_'+mindate+'_'+YearForFilename+MonthForFilename+DayForFilename+HourForFilename+MinForFilename+".bin",'wb'))
+    else:
+        pickle.dump(results_dict,open('TauRelPipeline_FullResults_'+wave+'_'+source+'_'+mindate+'_'+YearForFilename+MonthForFilename+DayForFilename+HourForFilename+MinForFilename+".bin",'wb'))
 
     if not os.path.exists('results'): os.system('mkdir results')
     if not os.path.exists('Figures'): os.system('mkdir Figures')
