@@ -1,5 +1,4 @@
-Run SCUBA* notebook to produce results files
-Run make_cats to get the master catalogues
+Run SCUBA* notebook to produce results files and master catalogues
 
 Then we need to run best_plotting* to get the InfoFiles
 

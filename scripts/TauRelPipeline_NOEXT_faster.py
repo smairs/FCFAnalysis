@@ -480,7 +480,7 @@ def TauRelPipeline(source,OR_coeffs,wave,mindate,maxdate,aperture_diam=0.0166666
                 previous_results_dict[run_num_str]['FWHM1s'].extend(list(FWHM1s))
                 previous_results_dict[run_num_str]['FWHM2s'].extend(list(FWHM2s))
                 previous_results_dict[run_num_str]['transmissions'].extend(list(transmissions))
-                previous_results_dict[run_num_str]['transmissions'].extend(list(delta_trans_list))
+                previous_results_dict[run_num_str]['delta_trans'].extend(list(delta_trans_list))
                 previous_results_dict[run_num_str]['WVMTAUST'].extend(list(WVMST))
                 previous_results_dict[run_num_str]['WVMTAUEN'].extend(list(WVMEN))
                 previous_results_dict[run_num_str]['WVMTAUST_TIME'].extend(list(WVMST_TIME))

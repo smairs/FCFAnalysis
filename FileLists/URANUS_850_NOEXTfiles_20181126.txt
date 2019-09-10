@@ -67,3 +67,5 @@
 /net/kamaka/export/data/jsa_proc/output/000/000249/000249884/s20190828_00067_850_reduced.sdf
 /net/kamaka/export/data/jsa_proc/output/000/000249/000249939/s20190829_00068_850_reduced.sdf
 /net/kamaka/export/data/jsa_proc/output/000/000249/000249939/s20190829_00049_850_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000250/000250108/s20190903_00066_850_reduced.sdf
+/net/kamaka/export/data/jsa_proc/output/000/000250/000250150/s20190904_00055_850_reduced.sdf
